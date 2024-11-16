@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "postcss scripts/styles/tailwind.css -o scripts/styles/output/tailwind.css",
     "watch:css": "postcss scripts/styles/tailwind.css -o scripts/styles/output/tailwind.css --watch"
