@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/scripts/styles/output/tailwind.css">
+  <title>Pizza Store Menu</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+
+  <h1 class=" text-4xl font-bold text-center">Walk In  Pizza </h1>
+
+  <!-- Add an ID to the form -->
+  <form class="grid grid-cols-2 gap-1 h-screen place-items-center bg-gray-100  text-lg ..." id="pizza-order-form" action="/submit-order" method="post">
+    <!-- Pizza Sizes as Radio Buttons -->
+    <div class="section ">
+      <h2 class="">Select Pizza Size</h2>
+      <% data.pizza_sizes.forEach(size => { %>
+        <div class="form-group">
+          <label>
+            <input type="radio" name="pizza_size" value="<%= size.id %>" data-price="<%= size.price %>">
+            <%= size.name %> - $<%= size.price %>
+          </label>
+        </div>
+      <% }) %>
+    </div>
+
+    <!-- Dough Types as Radio Buttons -->
+    <div class="section">
+      <h2>Select Dough Type</h2>
+      <% data.dough_types.forEach(dough => { %>
+        <div class="form-group">
+          <label>
+            <input type="radio" name="dough_type" value="<%= dough.id %>" data-price="<%= dough.price %>" >
+            <%= dough.name %> - $<%= dough.price %>
+          </label>
+        </div>
+      <% }) %>
+    </div>
+
+    <!-- Toppings as Checkboxes -->
+    <div class="section">
+      <h2>Select Toppings</h2>
+      <% data.toppings.forEach(topping => { %>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="toppings" value="<%= topping.id %>" data-price="<%= topping.price %>">
+            <%= topping.name %> - $<%= topping.price %>
+          </label>
+        </div>
+      <% }) %>
+    </div>
+
+    <!-- Customer Information Section -->
+    <div class="section bg-gray-100 p-1 rounded-md shadow-sm w-full max-w-md mx-auto">
+      <h2 class="text-lg font-semibold text-gray-800 mb-2">Customer Information</h2>
+    
+      <div class="form-group mb-1">
+        <label for="name" class="block text-gray-700 text-sm mb-1">Full Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          class="w-full px-1 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        >
+      </div>
+    
+      <div class="form-group mb-1">
+        <label for="phone" class="block text-gray-700 text-sm mb-1">Phone Number:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          class="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        >
+      </div>
+    
+      <div class="form-group mb-1">
+        <label for="email" class="block text-gray-700 text-sm mb-1">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        >
+      </div>
+    
+      <div class="form-group mb-1">
+        <label for="address" class="block text-gray-700 text-sm mb-1">Delivery Address:</label>
+        <textarea
+          id="address"
+          name="address"
+          required
+          class="w-full px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 text-sm"
+        ></textarea>
+      </div>
+    </div>
+    
+    
+    <p  id="total-price" class=" py-2 px-5 bg-violet-500 text-white font-semibold rounded-full col-span-2 justify-self-center shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 transform translate-y-[-20px]" >
+      
+    </p>
+    <!-- Submit Button -->
+    <button class="py-2 px-5 bg-violet-500 text-white font-semibold rounded-full col-span-2 justify-self-center shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75 transform translate-y-[-20px]" type="submit">
+      Place Order
+    </button>
+    
+  </form>
+  <section class="grid grid-cols-2  gap-2 hover:gap-6 py-2 px-5 bg-violet-500 text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75" >
+<button> <a href="/addInventory" target="_blank">Add inventory</a> </button>
+
+  
+  
+    <button> <a href="/Dashboard" target="_blank">Dashboard</a> </button>
+  </section >
+      
+
+  <!-- Add the external script to handle form submission -->
+  <script type="text/javascript" src="/scripts/insertOrder.js"></script>
+</body>
+</html>

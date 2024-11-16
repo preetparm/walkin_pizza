@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Language</title>
+</head>
+<body>
+    
+    <h1>Add a New Programming Language</h1>
+    <p id="msg"></p>
+    <form id='submit'action="/addLanguages" method="POST">
+        <label for="name">Language Name:</label>
+        <input type="text" id="name" name="name" >
+        
+        <label for="released_year">Released Year:</label>
+        <input type="number" id="released_year" name="released_year" >
+        
+        <label for="githut_rank">GitHub Rank:</label>
+        <input type="number" id="githut_rank" name="githut_rank" >
+        
+        <label for="pypl_rank">PYPL Rank:</label>
+        <input type="number" id="pypl_rank" name="pypl_rank" >
+        
+        <label for="tiobe_rank">TIOBE Rank:</label>
+        <input type="number" id="tiobe_rank" name="tiobe_rank" >
+        
+        <button id="submitBtn" type="submit" >Add Language</button>
+    </form>
+
+    <script type="text/javascript" src="./scripts/formValidation.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scripts/styles/output/tailwind.css">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-50">
+    <form class="grid grid-cols-4 gap-4 bg-white shadow-md p-6 rounded-xl border border-gray-200" id="addInventoryForm" method="post">
+        <label for="example" class="col-span-4 text-lg font-semibold">Select Item</label>
+        <select name="item" id="example" 
+                class="col-span-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            <% if (data.forEntry && data.forEntry.length > 0) { %>
+                <% data.forEntry.forEach(item => { %>
+                    <option value='<%= JSON.stringify({id: item.id, name: item.name}) %>'>
+                        <%= item.name %>
+                    </option>
+                <% }) %>
+            <% } else { %>
+                <option disabled>No items available</option>
+            <% } %>
+        </select>
+
+        <label for="qty" class="col-span-4 text-lg font-semibold">Quantity</label>
+        <input name="qty" type="number" id="qty" 
+               class="col-span-4 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+
+        <button type="submit" 
+                class="col-span-4 bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition">Add to Inventory</button>
+        
+        <section class="col-span-4 text-center">
+            <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 transition">
+                <a href="/" class="no-underline">Back to Order</a>
+            </button>
+        </section>
+    </form>
+
+    <script type="text/javascript" src="./scripts/addInventory.js"></script>   
+</body>
+
+</html>

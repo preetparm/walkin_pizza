@@ -1,0 +1,48 @@
+
+    /* Set a fixed height for the canvas container */
+    .chart-container {
+        width: 100%;   /* Full width */
+        max-width: 300px; /* Optional: limit max width */
+        height: 400px; /* Fixed height to prevent infinite growth */
+        position: relative; /* Position relative for proper canvas sizing */
+        text-align: left;
+        
+    }
+
+    .chart-container canvas {
+        /* Ensures canvas takes full size of its container */
+        width: 100%;
+        height: 100%;
+    }
+
+    /* styles.css */
+    .circle-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+      
+      .circle-item {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      
+      .circle-heading {
+        font-size: 1.2em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      
+      .circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #4CAF50; /* Customize this color */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      

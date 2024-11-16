@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/scripts/styles/output/tailwind.css">
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <form class="grid grid-cols-4 gap-4 bg-white p-6 rounded-lg shadow-lg" action="/login" method="post">
+        <label for="email" class="col-span-4 text-lg font-medium">Email</label>
+        <input type="text" id="email" name="email" required 
+               class="col-span-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <label for="password" class="col-span-4 text-lg font-medium">Password</label>
+        <input type="password" id="password" name="password" required 
+               class="col-span-4 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <button type="submit" 
+                class="col-span-4 mt-4 bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600 transition">Login</button>
+    </form>
+    <button onclick="window.location.href='/signup'" 
+            class="mt-4 bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 transition">Sign Up</button>
+</body>
+
+
+</html>
+
