@@ -25,8 +25,8 @@ app.set('view engine', 'ejs');
 app.set('views',path.resolve('./views'))
 
 /// Define routes that don't require token verification first
-app.post('/signup', languageRouter); 
-app.get('/signup', (req, res) => res.render('signup'));// Signup route without token check
+// app.post('/signup', languageRouter); 
+// app.get('/signup', (req, res) => res.render('signup'));// Signup route without token check
 app.get('/login', (req, res) => res.render('login')); // Login page
 app.post('/login',languageRouter); // Login POST
 
