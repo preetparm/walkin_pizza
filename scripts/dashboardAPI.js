@@ -34,7 +34,7 @@ const warningSection = document.getElementById("warning-section"); // Select the
 let lowInventoryItems = ""; // Initialize a string to accumulate item names
 
 data.data.data.remainingQty
-  .filter(qty => qty.remaining_inventory < 500)  // Filter items with inventory < 6000
+  .filter(qty => qty.remaining_inventory < 700)  // Filter items with inventory < 6000
   .forEach(qty => {
     lowInventoryItems += `${qty.item_name} (Remaining: ${qty.remaining_inventory})<br>`;  // Append the item name and remaining inventory
   });
